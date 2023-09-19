@@ -1,0 +1,11 @@
+[Defines]
+  DEC_SPECIFICATION                   = 0x00010005
+  PACKAGE_NAME                        = ExampleApple
+  PACKAGE_GUID                        = 0bc40a20-8da8-4003-8e28-67dfb3de362c
+  PACKAGE_VERSION                     = 0.1
+
+[Includes.common]
+  Include                               # Root include for the package
+
+[Guids.common]
+  gExampleAppleTokenSpaceGuid         = { 0x0bc40a20, 0x8da8, 0x4003, { 0x8e, 0x28, 0x67, 0xdf, 0xb3, 0xde, 0x36, 0x2c } }

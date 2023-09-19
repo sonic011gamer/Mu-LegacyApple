@@ -1,0 +1,30 @@
+[Defines]
+  DEC_SPECIFICATION                   = 0x00010005
+  PACKAGE_NAME                        = ApplePkg
+  PACKAGE_GUID                        = 224175b9-3ad7-4d92-9526-2c1ad7556f5a
+  PACKAGE_VERSION                     = 0.1
+
+[Includes.common]
+  Include                               # Root include for the package
+
+[Guids.common]
+  gApplePkgTokenSpaceGuid             = { 0x224175b9, 0x3ad7, 0x4d92, { 0x95, 0x26, 0x2c, 0x1a, 0xd7, 0x55, 0x6f, 0x5a } }
+
+[PcdsFixedAtBuild.common]
+  # PNG File GUIDs
+  gApplePkgTokenSpaceGuid.PcdNoBootOSFile|{ 0x09, 0xe1, 0x7a, 0x8a, 0x31, 0x12, 0x41, 0x21, 0xa4, 0x37, 0x18, 0x3c, 0xf1, 0x88, 0xee, 0x66 }|VOID*|0x0000a100
+
+  # SmBios
+  gApplePkgTokenSpaceGuid.PcdSmbiosSystemVendor|""|VOID*|0x0000a200
+  gApplePkgTokenSpaceGuid.PcdSmbiosProcessorModel|""|VOID*|0x0000a201
+  gApplePkgTokenSpaceGuid.PcdSmbiosProcessorRetailModel|""|VOID*|0x0000a202
+  gApplePkgTokenSpaceGuid.PcdSmbiosSystemModel|""|VOID*|0x0000a203
+  gApplePkgTokenSpaceGuid.PcdSmbiosSystemRetailModel|""|VOID*|0x0000a204
+  gApplePkgTokenSpaceGuid.PcdSmbiosSystemRetailSku|""|VOID*|0x0000a205
+  gApplePkgTokenSpaceGuid.PcdSmbiosBoardModel|""|VOID*|0x0000a206
+
+  # Simple FrameBuffer
+  gApplePkgTokenSpaceGuid.PcdMipiFrameBufferWidth|0|UINT32|0x0000a300
+  gApplePkgTokenSpaceGuid.PcdMipiFrameBufferHeight|0|UINT32|0x0000a301
+  gApplePkgTokenSpaceGuid.PcdMipiFrameBufferPixelBpp|0|UINT32|0x0000a302
+  gApplePkgTokenSpaceGuid.PcdMipiFrameBufferDelay|0|UINT32|0x0000a303

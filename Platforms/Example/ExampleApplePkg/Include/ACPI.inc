@@ -1,0 +1,23 @@
+#FILE FREEFORM = 7E374E25-8E01-4FEE-87F2-390C23C606CD {
+#  SECTION RAW = ExampleSoCPkg/AcpiTables/APIC.aml
+#  SECTION RAW = ExampleSoCPkg/AcpiTables/APIC.UniCore.aml
+#  SECTION RAW = ExampleSoCPkg/AcpiTables/BERT.aml
+#  SECTION RAW = ExampleSoCPkg/AcpiTables/BGRT.aml
+#  SECTION RAW = ExampleSoCPkg/AcpiTables/CSRT.aml
+#  SECTION RAW = ExampleSoCPkg/AcpiTables/DBG2.aml
+#  SECTION RAW = ExampleApplePkg/AcpiTables/DSDT.aml
+#  SECTION RAW = ExampleSoCPkg/AcpiTables/FACP.aml
+#  SECTION RAW = ExampleSoCPkg/AcpiTables/FPDT.aml
+#  SECTION RAW = ExampleSoCPkg/AcpiTables/GTDT.aml
+#  SECTION RAW = ExampleSoCPkg/AcpiTables/IORT.aml
+#  SECTION RAW = ExampleSoCPkg/AcpiTables/MCFG.aml
+#  SECTION RAW = ExampleSoCPkg/AcpiTables/MSDM.aml
+#  SECTION RAW = ExampleSoCPkg/AcpiTables/PPTT.aml
+#  SECTION RAW = ExampleSoCPkg/AcpiTables/SPCR.aml
+#  SECTION RAW = ExampleSoCPkg/AcpiTables/TPM2.aml
+#  SECTION RAW = ExampleSoCPkg/AcpiTables/XSDT.aml
+#  SECTION RAW = ApplePkg/AcpiTables/SSDT.aml
+#  SECTION RAW = ApplePkg/AcpiTables/TPMDev.dat
+#  SECTION RAW = ApplePkg/AcpiTables/SoftwareTpm2Table.aml
+#  SECTION UI = "AcpiTables"
+#}

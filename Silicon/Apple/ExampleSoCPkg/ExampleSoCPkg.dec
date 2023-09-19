@@ -1,0 +1,11 @@
+[Defines]
+  DEC_SPECIFICATION                   = 0x00010005
+  PACKAGE_NAME                        = ExampleSoCPkg
+  PACKAGE_GUID                        = d1e14492-d9e8-4872-b35a-25455deee86e
+  PACKAGE_VERSION                     = 0.1
+
+[Includes.common]
+  Include                               # Root include for the package
+
+[Guids.common]
+  gExampleSoCPkgTokenSpaceGuid        = { 0xd1e14492, 0xd9e8, 0x4872, { 0xb3, 0x5a, 0x25, 0x45, 0x5d, 0xee, 0xe8, 0x6e } }
