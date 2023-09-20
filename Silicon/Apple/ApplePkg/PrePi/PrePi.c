@@ -67,7 +67,7 @@ PrePiMain (
   CHAR8                       Buffer[100];
   UINTN                       CharCount;
   UINTN                       StacksSize;
-  FIRMWARE_SEC_PERFORMANCE    Performance;
+ FIRMWARE_SEC_PERFORMANCE    Performance;
 
   UINTN MemoryBase     = 0;
   UINTN MemorySize     = 0;

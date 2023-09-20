@@ -919,6 +919,7 @@ DeviceBootManagerPriorityBoot (
   FrontPageBoot = MsBootPolicyLibIsSettingsBoot ();
   AltDeviceBoot = MsBootPolicyLibIsAltBoot ();
   MsBootPolicyLibClearBootRequests ();
+//  FrontPageBoot = TRUE;
 
   // There are four cases:
   //   1. Nothing pressed.             return EFI_NOT_FOUND

@@ -27,8 +27,8 @@
   gApplePkgTokenSpaceGuid.PcdSmbiosProcessorModel|"Example (R) ExampleSoC @ 5.70 GHz"
   gApplePkgTokenSpaceGuid.PcdSmbiosProcessorRetailModel|"ExSoC"
 
-  gArmPlatformTokenSpaceGuid.PcdCoreCount|8
-  gArmPlatformTokenSpaceGuid.PcdClusterCount|4
+  gArmPlatformTokenSpaceGuid.PcdCoreCount|2
+  gArmPlatformTokenSpaceGuid.PcdClusterCount|1
 
 [LibraryClasses.common]
   PlatformPeiLib|ExampleSoCPkg/Library/PlatformPeiLib/PlatformPeiLib.inf

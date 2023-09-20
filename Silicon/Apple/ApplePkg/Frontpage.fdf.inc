@@ -20,6 +20,11 @@
 
   INF MsCorePkg/AcpiRGRT/AcpiRgrt.inf
 
+  FILE APPLICATION= PCD(gPcBdsPkgTokenSpaceGuid.PcdShellFile) {
+    SECTION PE32 = $(OUTPUT_DIRECTORY)/$(TARGET)_$(TOOL_CHAIN_TAG)/ARM/Shell.efi
+    SECTION UI = "Shell"
+  }
+  
   FILE FREEFORM = PCD(gApplePkgTokenSpaceGuid.PcdNoBootOSFile) {
     SECTION RAW = ApplePkg/Include/Resources/NoBootOS.png
   }

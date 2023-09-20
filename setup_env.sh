@@ -42,7 +42,7 @@ fi
 
 # Install all needed Packages
 if [ ${PAK} = apt ]; then
-    sudo apt install -y pip git mono-devel build-essential nuget uuid-dev iasl nasm gcc-arm-linux-gnueabi python3 python3-distutils python3-git python3-pip gettext locales gnupg ca-certificates python3-venv git git-core clang llvm curl||_error "\nFailed to install Packages!\n"
+    sudo apt install -y pip git mono-devel build-essential nuget uuid-dev iasl nasm gcc-arm-linux-gnueabihf python3 python3-distutils python3-git python3-pip gettext locales gnupg ca-certificates python3-venv git git-core clang llvm curl||_error "\nFailed to install Packages!\n"
 elif [ ${PAK} = dnf ]; then
     # TODO: Add ARM GCC for Fedora
     sudo dnf install -y git mono-devel nuget iasl nasm make gcc automake kernel-devel python3 python3-pip gettext gnupg ca-certificates git git-core clang llvm curl||_error "\nFailed to install Packages!\n"

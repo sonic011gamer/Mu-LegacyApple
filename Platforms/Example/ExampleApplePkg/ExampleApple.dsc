@@ -31,13 +31,13 @@
 [PcdsFixedAtBuild.common]
   # Platform-specific
   gArmTokenSpaceGuid.PcdSystemMemoryBase|0x80000000         # Starting address
-  gArmTokenSpaceGuid.PcdSystemMemorySize|0x80000000         # 2GB Size
+  gArmTokenSpaceGuid.PcdSystemMemorySize|0x40000000         # 1GB Size
 
   gEfiMdeModulePkgTokenSpaceGuid.PcdFirmwareVendor|L"Hmmm"  # Device Maintainer
 
-  gArmTokenSpaceGuid.PcdCpuVectorBaseAddress|0x9FF8C000
+  gArmTokenSpaceGuid.PcdCpuVectorBaseAddress|0x80C40000
 
-  gEmbeddedTokenSpaceGuid.PcdPrePiStackBase|0x9FF90000
+  gEmbeddedTokenSpaceGuid.PcdPrePiStackBase|0x80C00000
   gEmbeddedTokenSpaceGuid.PcdPrePiStackSize|0x00040000      # 256K stack
 
   # SmBios
@@ -48,18 +48,18 @@
   gApplePkgTokenSpaceGuid.PcdSmbiosBoardModel|"Example_Apple"
 
   # Simple FrameBuffer
-  gApplePkgTokenSpaceGuid.PcdMipiFrameBufferWidth|2340
-  gApplePkgTokenSpaceGuid.PcdMipiFrameBufferHeight|1080
+  gApplePkgTokenSpaceGuid.PcdMipiFrameBufferWidth|640
+  gApplePkgTokenSpaceGuid.PcdMipiFrameBufferHeight|1136
   gApplePkgTokenSpaceGuid.PcdMipiFrameBufferPixelBpp|32
 
 [PcdsDynamicDefault.common]
-  gEfiMdeModulePkgTokenSpaceGuid.PcdVideoHorizontalResolution|2340
-  gEfiMdeModulePkgTokenSpaceGuid.PcdVideoVerticalResolution|1080
-  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupVideoHorizontalResolution|2340
-  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupVideoVerticalResolution|1080
-  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupConOutColumn|170
-  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupConOutRow|40
-  gEfiMdeModulePkgTokenSpaceGuid.PcdConOutColumn|170
-  gEfiMdeModulePkgTokenSpaceGuid.PcdConOutRow|40
+  gEfiMdeModulePkgTokenSpaceGuid.PcdVideoHorizontalResolution|640
+  gEfiMdeModulePkgTokenSpaceGuid.PcdVideoVerticalResolution|1136
+  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupVideoHorizontalResolution|640
+  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupVideoVerticalResolution|1136
+  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupConOutColumn|80
+  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupConOutRow|59
+  gEfiMdeModulePkgTokenSpaceGuid.PcdConOutColumn|80
+  gEfiMdeModulePkgTokenSpaceGuid.PcdConOutRow|59
 
 !include ExampleSoCPkg/ExampleSoCPkg.dsc.inc

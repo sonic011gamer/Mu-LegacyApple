@@ -21,6 +21,7 @@ SPDX-License-Identifier: BSD-2-Clause-Patent
 #include <Library/UefiBootServicesTableLib.h>
 #include <Library/UefiLib.h>
 
+#define INTERNAL_UEFI_SHELL_NAME  L"Internal UEFI Shell 2.0"
 #define MS_SDD_BOOT       L"Internal Storage"
 #define MS_SDD_BOOT_PARM  "SDD"
 #define MS_USB_BOOT       L"USB Storage"
@@ -459,6 +460,7 @@ MsBootOptionsLibRegisterDefaultBootOptions (
 
   RegisterFvBootOption (&gMsBootPolicyFileGuid, MS_SDD_BOOT, (UINTN)-1, LOAD_OPTION_ACTIVE, (UINT8 *)MS_SDD_BOOT_PARM, sizeof (MS_SDD_BOOT_PARM));
   RegisterFvBootOption (&gMsBootPolicyFileGuid, MS_USB_BOOT, (UINTN)-1, LOAD_OPTION_ACTIVE, (UINT8 *)MS_USB_BOOT_PARM, sizeof (MS_USB_BOOT_PARM));
+  RegisterFvBootOption (PcdGetPtr (PcdShellFile), INTERNAL_UEFI_SHELL_NAME, (UINTN)-1, LOAD_OPTION_ACTIVE, NULL, 0);
 }
 
 /**
@@ -477,6 +479,8 @@ MsBootOptionsLibGetDefaultOptions (
   UINTN                         LocalOptionCount      = 2;
   EFI_BOOT_MANAGER_LOAD_OPTION  *Option;
   EFI_STATUS                    Status;
+  EFI_STATUS                    Status2;
+  UINTN                         AdditionalOptionCount = 2;
 
   Option = (EFI_BOOT_MANAGER_LOAD_OPTION *)AllocateZeroPool (sizeof (EFI_BOOT_MANAGER_LOAD_OPTION) * LocalOptionCount);
   ASSERT (Option != NULL);
@@ -487,6 +491,15 @@ MsBootOptionsLibGetDefaultOptions (
 
   Status  = CreateFvBootOption (&gMsBootPolicyFileGuid, MS_SDD_BOOT, &Option[0], LOAD_OPTION_ACTIVE, (UINT8 *)MS_SDD_BOOT_PARM, sizeof (MS_SDD_BOOT_PARM));
   Status |= CreateFvBootOption (&gMsBootPolicyFileGuid, MS_USB_BOOT, &Option[1], LOAD_OPTION_ACTIVE, (UINT8 *)MS_USB_BOOT_PARM, sizeof (MS_USB_BOOT_PARM));
+
+
+  Status2 = CreateFvBootOption (PcdGetPtr (PcdShellFile), INTERNAL_UEFI_SHELL_NAME, &Option[LocalOptionCount + AdditionalOptionCount], LOAD_OPTION_ACTIVE, NULL, 0);
+  if (!EFI_ERROR (Status2)) {
+    // The shell is optional.  So, ignore that we cannot create it.
+    AdditionalOptionCount++;
+  }
+
+  *OptionCount = LocalOptionCount + AdditionalOptionCount;
 
   if (EFI_ERROR (Status)) {
     DEBUG ((DEBUG_ERROR, "%a Error creating defatult boot options\n", __FUNCTION__));

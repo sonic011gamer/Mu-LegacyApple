@@ -1,1 +1,7 @@
 Build/
+BootShim/BootShim.bin
+BootShim/BootShim.elf
+.venv/
+Conf/
+.irecovery
+.vscode/
